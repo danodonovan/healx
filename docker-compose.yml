@@ -10,8 +10,6 @@ services:
         environment:
             discovery.type: single-node
             xpack.security.enabled: "false"
-        ports:
-            - "${ES_PORT1}:9200"
-            - "${ES_PORT2}:9300"
+        ports: ['9200:9200', '9300:9300']
         volumes:
             - esdata:/usr/share/elasticsearch/data
